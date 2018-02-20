@@ -18,7 +18,14 @@ export default {
     };
   },
   mounted() {
-
+    this.throttledOnScroll(function () {
+      console.log("Dziala")
+    })
+  },
+  methods: {
+    skroluj() {
+      this.scrollThere("#dupa")
+    }
   }
 };
 </script>

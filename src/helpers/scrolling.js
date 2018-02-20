@@ -3,8 +3,8 @@ import throttle from "lodash/throttle";
 
 /**
  *
- * @param {*} selector
- * @param {*} options
+ * @param {string} selector - do ktorego przewijamy
+ * @param {object} options - musi miec duration z długością animacji
  */
 function scrollThere(selector, options = { duration: 1500 }) {
   return (
@@ -15,11 +15,16 @@ function scrollThere(selector, options = { duration: 1500 }) {
       setTimeout(() => {
         window.ownScroll = false;
         resolve()
-      }, options[duration] + 100);
+      }, options['duration'] + 100);
     })
   )
 }
 
+/**
+ *
+ * @param {function} newFunction - funkcja ktora bedziemy wywolywac przy scrollowaniu
+ * @param {number} throttlingTime - czas throttlowania
+ */
 function throttledOnScroll(newFunction, throttlingTime = 1000) {
   window.document.body.onscroll = throttle(function () {
     if (!window.ownScroll) {
@@ -28,7 +33,7 @@ function throttledOnScroll(newFunction, throttlingTime = 1000) {
   }, throttlingTime, { trailing: false });
 }
 
-exports = {
+export {
   scrollThere,
   throttledOnScroll
 }

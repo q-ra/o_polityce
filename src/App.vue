@@ -1,5 +1,6 @@
 <template>
   <div id="app" class="op-main-div">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <hello></hello>
   </div>
 </template>
