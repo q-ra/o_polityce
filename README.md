@@ -26,3 +26,11 @@ vue init bootstrap-vue/webpack
 
 ## Dokumentacja uzywanych bibliotek
 https://bootstrap-vue.js.org/docs/components
+
+## Jak będzie problem z node-sass na dockerze - to trzeba to wykonac
+``` bash
+npm update
+npm install
+nodejs node_modules/node-sass/scripts/install.js
+npm rebuild node-sass
+```
