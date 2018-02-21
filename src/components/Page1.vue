@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import SomeIcon from '../assets/images/ekran10_4.svg';
+import SomeIcon from '../assets/images/ekran10_1.svg';
 
 export default {
   name: "page1",

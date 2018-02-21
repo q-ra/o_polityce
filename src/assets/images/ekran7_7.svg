@@ -4,7 +4,7 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px"
 	 height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
 <g id="Warstwa_2" display="none">
-	<rect display="inline" fill="#2D348B" width="100" height="100"/>
+	<rect display="inline" fill="#2D348B"  />
 </g>
 <g id="Warstwa_1">
 	<path fill="#FFFFFF" d="M97.599,45.577h-0.994v-2.231c0-0.829-0.626-1.553-1.454-1.607c-0.905-0.058-1.659,0.659-1.659,1.553v2.285
