@@ -4,7 +4,7 @@ import Vue from 'vue'
 import BootstrapVue from "bootstrap-vue"
 import App from './App'
 // import router from './router'
-import { scrollThere, scrollLogic, throttledOnScroll } from './helpers/scrolling'
+import { scrollThere, throttledOnScroll } from './helpers/scrolling'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
@@ -22,9 +22,12 @@ new Vue({
   components: { App }
 })
 
-throttledOnScroll(scrollLogic)
-window.document.onscroll = function(e) {
+function stopEverything(e) {
   e.preventDefault()
   e.stopPropagation()
   console.log("WOB")
 }
+window.document.addEventListener("scroll", stopEverything)
+window.document.addEventListener("DOMMouseScroll", stopEverything)
+throttledOnScroll()
+// window.document.addEventListener("mousewheel", stopEverything)
