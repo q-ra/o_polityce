@@ -16,7 +16,8 @@
     "popper.js": "^1.13.0",
     "scroll-to-element": "^2.0.0",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-svg-loader": "^0.5.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
