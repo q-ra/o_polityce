@@ -1,16 +1,16 @@
 <template>
   <div class="op-hello">
-    <page1 class="op-page"></page1>
-    <page2 class="op-page"></page2>
-    <page3 class="op-page"></page3>
-    <page4 class="op-page"></page4>
-    <page5 class="op-page"></page5>
-    <page6 class="op-page"></page6>
-    <page7 class="op-page"></page7>
-    <page8 class="op-page"></page8>
-    <page9 class="op-page"></page9>
-    <page10 class="op-page"></page10>
-    <page11 class="op-page"></page11>
+    <page1 class="op-page-breakpoint" data-breakpoint="10"></page1>
+    <page2 class="op-page-breakpoint" data-breakpoint="20"></page2>
+    <page3 class="op-page-breakpoint" data-breakpoint="30"></page3>
+    <page4 class="op-page-breakpoint" data-breakpoint="40"></page4>
+    <page5 class="op-page-breakpoint" data-breakpoint="50"></page5>
+    <page6 class="op-page-breakpoint" data-breakpoint="60"></page6>
+    <page7 class="op-page-breakpoint" data-breakpoint="70"></page7>
+    <page8 class="op-page-breakpoint" data-breakpoint="80"></page8>
+    <page9 class="op-page-breakpoint" data-breakpoint="90"></page9>
+    <page10 class="op-page-breakpoint" data-breakpoint="100"></page10>
+    <page11 class="op-page-breakpoint" data-breakpoint="110"></page11>
   </div>
 </template>
 
@@ -54,10 +54,6 @@ export default {
 </script>
 
 <style lang="scss">
-  .op-page{
-    height: 100vh;
-    width: 99vw;
-  }
   .op-hello {
      overflow-y: hidden;
   }

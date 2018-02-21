@@ -25,9 +25,9 @@ export default {
     };
   },
   mounted() {
-    this.throttledOnScroll(function () {
-      console.log("Dziala")
-    })
+    // this.throttledOnScroll(function () {
+    //   console.log("Dziala")
+    // })
   },
   methods: {
     skroluj() {

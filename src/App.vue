@@ -15,8 +15,7 @@ export default {
 }
 </script>
 
-<style>
-.op-main-div {
-  background-color: #30308f;
-}
+<style lang="scss">
+@import './style/main.scss';
+
 </style>
