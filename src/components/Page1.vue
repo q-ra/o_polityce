@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="grid">
     <h1> Page 1</h1>
     <button class='btn btn-primary' @click="skroluj"> TEST </button>
     <div>
@@ -37,6 +37,9 @@ export default {
 };
 </script>
 
-<style>
-
+<style lang="scss">
+  .grid {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
 </style>

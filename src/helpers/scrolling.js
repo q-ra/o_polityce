@@ -61,12 +61,17 @@ function throttledOnScroll(
     , true)
 }
 
-
+function stopEverything(e) {
+  e.preventDefault()
+  e.stopPropagation()
+  console.log("Stop")
+}
 
 
 export {
   scrollThere,
-  throttledOnScroll
+  throttledOnScroll,
+  stopEverything
 }
 
 
