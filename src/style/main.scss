@@ -1,5 +1,19 @@
+html {
+  font-family: "Rubik";
+  font-size: 10px;
+  font-style: normal;
+  @media (min-width: 480) {
+    font-size: 12px;
+  }
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
+  @media (min-width: 900px) {
+    font-size: 18px;
+  }
+}
 body {
-  font-size: 62.5%;
+  color: #fff;
 }
 .op-page-breakpoint{
   height: 100vh;
@@ -9,3 +23,4 @@ body {
 .op-main-div {
   background-color: #30308f;
 }
+

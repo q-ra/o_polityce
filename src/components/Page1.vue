@@ -34,46 +34,62 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../style/variables.scss';
   svg {
-    // min-height: 5rem;
     height: 5rem;
-    // max-height: 50%;
+    max-height: 14vw;
   }
   .page1 {
     display: grid;
     text-align: center;
     grid-template-columns: 1fr auto auto auto auto 1fr;
-    grid-column-gap: 0.5rem;
-    // grid-template-rows: 10rem auto auto auto auto auto;
+    @media(max-width: 320px) {
+      grid-template-columns: 5vw auto auto auto auto 5vw;
+    }
     align-items: end;
     grid-template-areas:
       ". . . . . ."
       ". . . . . ."
+      ". . . . . ."
       ". interested interested interested interested ."
-      ". yes yes no no ."
       ". yes yes no no ."
       ". o-pol ambasada ambasada ceo ."
       ". . . . . .";
-
-
   }
+
   .interested {
     grid-area: interested;
-
+    font-size: 1.8rem;
+    font-weight: bold;
   }
   .o-pol {
     grid-area: o-pol;
   }
   .ambasada {
     grid-area: ambasada;
+    padding-right: 1vw;
+    padding-left: 1vw;
   }
   .ceo {
     grid-area: ceo;
   }
+  @mixin but {
+    align-self: flex-start;
+    font-size: 5rem;
+    font-weight: bold;
+    margin: 0.7vw;
+    border-radius: 1.5rem;
+    margin-top: 1rem;
+  }
   .yes {
     grid-area: yes;
+    background-color: $rd;
+    @include but;
+
   }
   .no {
     grid-area: no;
+    background-color: $gr;
+    @include but;
   }
 </style>
