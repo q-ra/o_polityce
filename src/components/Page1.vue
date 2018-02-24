@@ -1,8 +1,8 @@
 <template>
   <div class="page1">
-    <div class="o-pol"> <oPol/></div>
-    <div class="ambasada"><ambasada /></div>
-    <div class="ceo"><ceo /></div>
+    <div class="o-pol"> <img :src="oPol" /></div>
+    <div class="ambasada"> <img :src="ambasada" /></div>
+    <div class="ceo"><img :src="ceo" /></div>
     <div class="interested"> Czy interesujesz się polityką? </div>
     <div class="yes">TAK</div>
     <div class="no">NIE</div>
@@ -11,22 +11,20 @@
 </template>
 
 <script>
-import oPol from '../assets/images/ekran1_1opolityce.svg';
-import ambasada from '../assets/images/ekran1_2usa.svg';
-import ceo from '../assets/images/ekran1_3ceo.svg';
+import oPol from '../assets/images/ekran1_1opolityce.png';
+import ambasada from '../assets/images/ekran1_2usa.png';
+import ceo from '../assets/images/ekran1_3ceo.png';
 
 export default {
   name: "page1",
   methods: {
 
   },
-  components: {
-    oPol,
-    ambasada,
-    ceo
-  },
   data() {
     return {
+      ambasada: ambasada,
+      oPol,
+      ceo
     };
   }
 };
@@ -34,7 +32,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '../style/variables.scss';
-  svg {
+  svg, img {
     height: 5rem;
     max-height: 14vw;
   }

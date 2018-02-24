@@ -14,6 +14,7 @@
     <div class="tv-text">Czy zgadzasz się, żeby w telewizji dostępny był tylko jeden kanał?</div>
     <div class="gr-text">O TYM TEŻ DECYDUJĄ POLITYCY!</div>
     <div class="rd-text">POLITYKA OBCHODZI TAKŻE CIEBIE!</div>
+    <arrow />
   </div>
 
 </template>
@@ -22,12 +23,14 @@
 import phone from "../assets/images/ekran2_1.svg";
 import wifi from "../assets/images/ekran2_2.svg";
 import tv from "../assets/images/ekran2_3.svg";
+import Arrow from './Arrow.vue'
 export default {
   name: "page2",
   components: {
     phone,
     wifi,
-    tv
+    tv,
+    arrow: Arrow
   },
   data() {
     return {
@@ -55,7 +58,7 @@ export default {
     ". . rd-text rd-text rd-text rd-text . ."
     ". . . . . . . ."
     ". . . . . . . ."
-    ". . . . . . . .";
+    ". . . arrow arrow . . .";
   @media (max-width: 480px) {
     grid-template-columns: 0 auto auto auto auto 0;
     grid-template-areas:
@@ -70,23 +73,30 @@ export default {
       ". rd-text rd-text rd-text rd-text ."
       ". . . . . ."
       ". . . . . ."
-      ". . . . . .";
+      ". . arrow arrow . .";
   }
   align-items: center;
+}
+@mixin wh-icons {
   svg {
-    height: 3rem;
+        height: 3rem;
     max-height: 14vw;
     margin: 1rem;
   }
+
 }
 .phone {
   grid-area: phone;
+  @include wh-icons;
 }
 .wifi {
   grid-area: wifi;
+  @include wh-icons;
 }
 .tv {
   grid-area: tv;
+  @include wh-icons;
+
 }
 @mixin wh-text {
   text-align: left;
@@ -120,4 +130,5 @@ export default {
   grid-area: rd-text;
   color: $rd;
 }
+
 </style>
