@@ -1,6 +1,6 @@
 <template>
-  <div>
-      <h1> Page 3 </h1>
+  <div class="page3">
+
   </div>
 </template>
 

@@ -5,8 +5,10 @@ import BootstrapVue from "bootstrap-vue"
 import App from './App'
 // import router from './router'
 import { scrollThere, throttledOnScroll, stopEverything } from './helpers/scrolling'
+import { throttledOnSwipe } from './helpers/swiping'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+// import Hammer from 'hammerjs'
 
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
@@ -21,6 +23,10 @@ new Vue({
 })
 
 
+
+
+
 window.document.addEventListener("scroll", stopEverything)
 window.document.addEventListener("DOMMouseScroll", stopEverything)
 throttledOnScroll()
+throttledOnSwipe()

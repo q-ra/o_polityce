@@ -35,30 +35,44 @@ function throttledOnScroll(
     function scrollLogic(e) {
       e.preventDefault()
       e.stopPropagation()
-      if (!window.blocked) {
-        window.blocked = true
-        let scrollingDown = e.deltaY > 0 ? 1 : -1;
-        let breakpointElements = document.querySelectorAll(breakpointSelector)
-        let currentIndex = null;
-        let indx = 0
-        for (indx = 0; indx < breakpointElements.length; indx += 1) {
-          if (breakpointElements[indx].getBoundingClientRect().top + 1 > 0) {
-            currentIndex = indx
-            break
-          }
-        }
-        let nextElem = breakpointElements[indx + scrollingDown]
-        if (nextElem) {
-          let dataForScroll = nextElem.getAttribute(dataBreakpoint)
-          scrollThere(`${breakpointSelector}[${dataBreakpoint}="${dataForScroll}"]`)
-        }
+      let scrollingDown = e.deltaY > 0 ? 1 : -1;
+      throttledMove(scrollingDown, breakpointSelector, dataBreakpoint, throttleTime)
+    }
+    , true)
+}
 
-        setTimeout((e) => { window.blocked = false }, throttleTime)
+/**
+ * Funkcja obsługująca przewijanie
+ * @param {Number} scrollingDown - idziemy w gore czy dół ( 1 lub -1 )
+ * @param {string} breakpointSelector - powtarzajacy sie selector z nowymi stronami
+ * @param {string} dataBreakpoint - unikalna data po ktorej rozpoznajemy selectory
+ * @param {number} throttleTime - czas throttla
+ */
+function throttledMove(
+  scrollingDown,
+  breakpointSelector = ".op-page-breakpoint",
+  dataBreakpoint = "data-breakpoint",
+  throttleTime = 1600,
+) {
+  if (!window.blocked) {
+    window.blocked = true
+    let breakpointElements = document.querySelectorAll(breakpointSelector)
+    let currentIndex = null;
+    let indx = 0
+    for (indx = 0; indx < breakpointElements.length; indx += 1) {
+      if (breakpointElements[indx].getBoundingClientRect().top + 1 > 0) {
+        currentIndex = indx
+        break
       }
-
+    }
+    let nextElem = breakpointElements[indx + scrollingDown]
+    if (nextElem) {
+      let dataForScroll = nextElem.getAttribute(dataBreakpoint)
+      scrollThere(`${breakpointSelector}[${dataBreakpoint}="${dataForScroll}"]`)
     }
 
-    , true)
+    setTimeout((e) => { window.blocked = false }, throttleTime)
+  }
 }
 
 function stopEverything(e) {
@@ -71,6 +85,7 @@ function stopEverything(e) {
 export {
   scrollThere,
   throttledOnScroll,
+  throttledMove,
   stopEverything
 }
 
