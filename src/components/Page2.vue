@@ -79,7 +79,7 @@ export default {
 }
 @mixin wh-icons {
   svg {
-        height: 3rem;
+    height: 3rem;
     max-height: 14vw;
     margin: 1rem;
   }
